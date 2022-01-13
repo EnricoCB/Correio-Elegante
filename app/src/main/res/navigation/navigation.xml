@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/splashScrennFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.correioelegante.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_registerMessageFragment"
+            app:destination="@id/registerMessageFragment"
+            app:enterAnim="@anim/exit_to_left"
+            app:exitAnim="@anim/fade_out"/>
+    </fragment>
+    <fragment
+        android:id="@+id/splashScrennFragment"
+        android:name="com.example.correioelegante.SplashScrennFragment"
+        android:label="fragment_splash_screnn"
+        tools:layout="@layout/fragment_splash_screnn" >
+        <action
+            android:id="@+id/action_splashScrennFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@android:anim/fade_in" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerMessageFragment"
+        android:name="com.example.correioelegante.RegisterMessageFragment"
+        android:label="fragment_register_message"
+        tools:layout="@layout/fragment_register_message" >
+        <action
+            android:id="@+id/action_registerMessageFragment_to_confirmationFragment"
+            app:destination="@id/confirmationFragment"
+            app:enterAnim="@anim/exit_to_left"
+            app:exitAnim="@anim/fade_out"/>
+    </fragment>
+    <fragment
+        android:id="@+id/confirmationFragment"
+        android:name="com.example.correioelegante.ConfirmationFragment"
+        android:label="fragment_confirmation"
+        tools:layout="@layout/fragment_confirmation" />
+</navigation>
